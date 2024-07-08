@@ -35,7 +35,7 @@ FROM Customers c
 JOIN Orders o ON c.CustomerID = o.CustomerID
 JOIN OrderDetails od ON o.OrderID = od.OrderID
 JOIN Products p ON od.ProductID = p.ProductID
-GROUP BY c.CustomerID, p.ProductID, c.CustomerName, p.ProductName
+GROUP BY c.CustomerID, p.ProductID
 ORDER BY c.CustomerName, p.ProductName;
 
 4. Extend the previous query to give the total price as well as the customer name, product name, 
@@ -49,7 +49,7 @@ FROM Customers c
 JOIN Orders o ON c.CustomerID = o.CustomerID 
 JOIN OrderDetails od ON o.OrderID = od.OrderID 
 JOIN Products p ON od.ProductID = p.ProductID 
-GROUP BY c.CustomerID, p.ProductID, c.CustomerName, p.ProductName, p.Price 
+GROUP BY c.CustomerID, p.ProductID
 ORDER BY c.CustomerName;
 
 5. Add a new Order to the Orders table.  You will have to specify the ID of an existing customer
